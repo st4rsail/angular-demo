@@ -29,15 +29,20 @@ config(['$routeProvider',
 ]);
 
 var loadData = function ($q) {
+  var data = {
+    name: 'philip',
+    age: 42,
+    interests: ['photography', 'pool', 'darts', 'angular']
+  };
   var defer = $q.defer();
-  defer.resolve('hello');
-  console.log('1.loadData');
+  defer.resolve(data);
+  // console.log('1.loadData');
   return defer.promise;
 };
 
 var prepData = function ($q) {
   var defer = $q.defer();
   defer.resolve('world');
-  console.log(angular.uppercase('Hello'));
+  // console.log(angular.uppercase('Hello'));
   return defer.promise;
 };
